@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GPH Price Comparison</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      .max_price {background-color: #ff8080;}
+      .min_price {background-color: lightgreen;}
+      .mid_price {background-color: lightyellow;}
+    </style>
+  </head>
+
+  <body>
+    
+    <%= render 'layouts/header' %>
+    
+       <div class="container">
+          
+          
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+    
+    <%= yield %> 
+          
+        </div>
+        
+        
+  </body>
+</html>

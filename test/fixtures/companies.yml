@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  GPHProductCode: MyString
+  SupplierProductCode: MyString
+  BarCode: 1
+  Description: MyString
+  GPH_RRP: 9.99
+
+two:
+  GPHProductCode: MyString
+  SupplierProductCode: MyString
+  BarCode: 1
+  Description: MyString
+  GPH_RRP: 9.99

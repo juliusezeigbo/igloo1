@@ -1,0 +1,62 @@
+
+
+   <div class="media">
+   <div class="media-body">
+      <table class="table table-bordered">
+        <tr>
+          <td><h5>Select CSV file</h5></td>
+        </tr>
+          <%= form_tag import_companies_path, multipart: true do %>
+    	 <tr>
+    	     <td ><%= file_field_tag :file %></td>
+    	 </tr>
+    	<tr>
+    	    <td><%= submit_tag "Upload File" %></td>
+      <% end %>
+</div>
+</div>
+</table>
+    	
+    	
+<p id="notice"><%= notice %></p>
+
+
+<h3>GPH Products Listing</h3>
+<div class="media">
+<div class="media-body">
+<table class="table table-hover table-bordered">
+    <tr>
+      <th>Gph Product Code</th>
+      <th>Supplier Product Code</th>
+      <th>Barcode</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.GPHProductCode %></td>
+        <td><%= company.SupplierProductCode %></td>
+        <td><%= company.BarCode %></td>
+        <td><%= company.Description %></td>
+        <td><%= number_to_currency(company.GPH_RRP, :unit => "£") %></td>
+        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+<%= will_paginate @companies %>
+
+
+     
+        <!--  <td><%= link_to 'New Product', new_company_path %></td>-->
+      

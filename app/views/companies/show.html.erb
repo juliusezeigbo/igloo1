@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+
+<table class="table table-border">
+<div class="form-group">
+  <strong>GPH Product Code:</strong>
+  <%= @company.GPHProductCode %>
+</div>
+
+<div class="form-group">
+  <strong>Supplier Product Code:</strong>
+  <%= @company.SupplierProductCode %>
+</div>
+
+<div class="form-group">
+  <strong>Barcode:</strong>
+  <%= @company.BarCode %>
+</div>
+
+<div class="form-group">
+  <strong>Description:</strong>
+  <%= @company.Description %>
+</div>
+
+<div class="form-group">
+  <strong>Price:</strong>
+  <%= @company.GPH_RRP %>
+</div>
+</table>
+
+<%= link_to 'Edit', edit_company_path(@company), class: "btn btn-link" %> |
+<%= link_to 'Back', companies_path, class: "btn btn-link" %>
+
+
+<h3>Competitor prices</h3>
+<table class="table table-hover table-bordered">
+    <tr>
+      <th>Vendor</th>
+      <th>Item description</th>
+      <th>Price (£)</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>GPH</td>
+      <td><%= @company.Description %></td>
+      <td class="<%= @current_price == @maxprice ? 'max_price' : @current_price == @minprice ? 'min_price' : 'mid_price' %>"><%= @current_price %></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <% @screwfix_results.each do |res| %>
+      <tr>
+        <td>Screwfix</td>
+        <td><%= res['title'] %></td>
+        <td class="<%= res['price'] == @maxprice ? 'max_price' : res['price'] == @minprice ? 'min_price' : 'mid_price' %>"><%= res['price'] %></td>
+        <td><%= link_to "View on site", "#{res['link']}", :target => "_blank" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

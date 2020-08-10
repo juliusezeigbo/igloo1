@@ -1,0 +1,42 @@
+<%= form_with(model: company, local: true) do |form| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :GPHProductCode %>
+    <%= form.text_field :GPHProductCode, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :SupplierProductCode %>
+    <%= form.text_field :SupplierProductCode, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :BarCode %>
+    <%= form.number_field :BarCode, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Description %>
+    <%= form.text_field :Description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :GPH_RRP %>
+    <%= form.text_field :GPH_RRP, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit %>
+  </div>
+<% end %>

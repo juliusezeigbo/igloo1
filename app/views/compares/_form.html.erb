@@ -1,0 +1,42 @@
+<%= form_with(model: compare, local: true) do |form| %>
+  <% if compare.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(compare.errors.count, "error") %> prohibited this compare from being saved:</h2>
+
+      <ul>
+      <% compare.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :owner_no %>
+    <%= form.number_field :owner_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :owner_name %>
+    <%= form.text_field :owner_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :manufacturer_code %>
+    <%= form.text_field :manufacturer_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

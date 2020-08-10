@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+    
+.thumbnail {
+  border-radius: 15px;
+  padding: 10px; 
+  background: #f3f8fd; 
+  border: 1px solid 
+  bottom: 40px;
+  
+   
+} 
+</style>
+</head>
+<body>
+    
+    
+    <div class="caption">   
+        <h2>Compare Product Prices</h2>
+    </div>
+    
+    <form class="navbar-form navbar-left" role="search">
+        			        <div class="form-group">
+        			    <%= form_tag compares_path, role: "search", :method => 'get' do %>
+        		        <%= text_field_tag :search, params[:search], placeholder: "Manufacturer Code", class: "form-control", :size => "70" %>
+                        <%= submit_tag "Compare Price", class: "btn btn-warning" %>
+                        <% end %>
+                        </div>
+    </form>
+    
+    
+    <div>
+      
+    </div>
+    
+  <table>
+   
+   
+  <br><br><br><br><br>
+  
+      <div class="center">
+        <div class="row">
+          <% @compares.each do |compare| %>
+            <div class="col-md-3">
+              
+                  <div class="thumbnail">
+                        <strong><%= compare.owner_name %></strong>
+                            <div class="card-body"><br>
+                                    <p class="card-text"><%= compare.description %></p>
+                                          <a href="#" class="btn btn-default"><%= compare.price %></a>
+                           
+                            </div>  
+                  
+                  </div>
+                 
+            </div>
+          <% end %>
+        </div>
+        </div>
+       
+   <%= will_paginate @compares, renderer: BootstrapPagination::Rails %>
+  
+   </table>
+  
+</body>
+</html>
+
+
+

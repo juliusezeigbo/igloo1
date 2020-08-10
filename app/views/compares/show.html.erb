@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner no:</strong>
+  <%= @compare.owner_no %>
+</p>
+
+<p>
+  <strong>Owner name:</strong>
+  <%= @compare.owner_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @compare.description %>
+</p>
+
+<p>
+  <strong>Manufacturer code:</strong>
+  <%= @compare.manufacturer_code %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @compare.price %>
+</p>
+
+<%= link_to 'Edit', edit_compare_path(@compare) %> |
+<%= link_to 'Back', compares_path %>

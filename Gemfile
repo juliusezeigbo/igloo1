@@ -30,7 +30,7 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'devise'
 gem 'will_paginate', '~> 3.3'
 gem 'will_paginate-bootstrap'
-gem 'carrierwave', '~> 2.0'
+# gem 'carrierwave', '~> 2.0'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
